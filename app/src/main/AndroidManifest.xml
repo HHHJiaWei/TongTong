@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.a44261.bysj102">
+
+    <!-- 相机的权限 -->
+    <!-- sd卡读取权限 -->
+    <!-- 获取sd卡写的权限，用于文件上传和下载 -->
+    <!-- 摄像头 -->
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+    <!-- sd卡存储 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <!-- 网络权限 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- 监听网络的变化 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <!-- 设备休眠 -->
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <!-- 录音 -->
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <!-- 通知震动 -->
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+
+    <application
+        android:name=".IM.ImApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".MainActivity" />
+        <activity android:name=".LoginActivity" />
+        <activity android:name=".RegActivity" />
+        <activity android:name=".FragmentActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".InformationActivity" />
+        <activity android:name=".UpdatePSDActivity" />
+        <activity android:name=".UpdateInformationActivity" />
+        <activity android:name=".MyInformationActivity" />
+        <activity android:name=".TT.HomePage" />
+        <activity android:name=".TT.FoundPage" />
+        <activity android:name=".TT.JoinPage" />
+        <activity android:name=".TT.UserActivity" />
+        <activity android:name=".TT.OrganizationActivity" />
+        <activity android:name=".TT.AddActivity" />
+        <activity android:name=".TT.SeeActivity" />
+        <activity android:name=".TT.UpdateActivity" />
+
+        <service
+            android:name=".TT.AlarmService"
+            android:enabled="true"
+            android:exported="true"
+            android:persistent="true"
+            android:priority="1000">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </service>
+
+        <receiver
+            android:name=".TT.AlarmReceiver"
+            android:enabled="true"
+            android:exported="true" />
+        <receiver
+            android:name=".TT.BootReceiver"
+            android:enabled="true"
+            android:exported="true" />
+
+        <meta-data
+            android:name="Bmob_APP_KEY"
+            android:value="7ee361ae2183671d9c529b40ebb1ea56" />
+
+        <receiver android:name="cn.bmob.newim.core.ConnectChangeReceiver">
+            <intent-filter>
+                <action android:name="cn.bmob.action.RECONNECT" />
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.USER_PRESENT" />
+            </intent-filter>
+        </receiver>
+
+        <service
+            android:name="cn.bmob.newim.core.service.BmobIMService"
+            android:process=":bmobcore" />
+        <service
+            android:name="cn.bmob.newim.core.service.NotifyService"
+            android:process=":bmobcore" />
+        <service android:name="cn.bmob.newim.core.service.ReConnectService" />
+        <service android:name="cn.bmob.newim.core.service.HeartBeatService" />
+
+        <activity
+            android:name=".IM.ui.ChatActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustResize" />
+        <activity android:name=".IM.ui.NewFriendActivity" />
+        <activity android:name=".IM.ui.SearchUserActivity" />
+        <activity android:name=".IM.ui.UserInfoActivity" />
+        <activity android:name=".IM.ui.ContactActivity" />
+        <activity android:name=".IM.ui.ConversationActivity" />
+        <activity android:name=".TYQ.EditTYQActivity" />
+        <activity android:name=".TYQ.TYQActivity"></activity>
+    </application>
+
+</manifest>

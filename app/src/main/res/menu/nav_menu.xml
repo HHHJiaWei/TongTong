@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_first"
+        android:icon="@drawable/ic_format_list_bulleted_black_24dp"
+        android:title="@string/first_fragment" />
+
+    <item
+        android:id="@+id/navigation_second"
+        android:icon="@drawable/ic_mail_outline_black_24dp"
+        android:title="@string/second_fragment" />
+
+    <item
+        android:id="@+id/navigation_third"
+        android:icon="@drawable/ic_camera_black_24dp"
+        android:title="@string/third_fragment" />
+    <item
+        android:id="@+id/navigation_fourth"
+        android:icon="@drawable/ic_perm_identity_black_24dp"
+        android:title="@string/fourth_fragment" />
+</menu>
